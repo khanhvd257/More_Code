@@ -1,0 +1,72 @@
+#include <iostream>
+#include <ctime>
+#include <string>
+using namespace std;
+
+int main() {
+    int chon;
+    int tam;
+    do{
+    cout<<"mời bạn lựa chọn:";
+    cout<<"\t1. Búa";
+    cout<<"\t2. Kéo";
+    cout<<"\t3.Lá\n";
+    cout<<"Lựa chọn của bạn là ";
+    cin>>chon;
+        switch (chon)
+    {
+    case 1:
+        cout<<"Bạn chọn Búa\n";
+        tam = 1;
+        break;
+    case 2:
+     cout<<"Bạn chọn Kéo \n";
+       tam =2;
+     break;
+    case 3:
+     cout<<"Bạn chọn Lá\n";
+      tam =3;
+     break;
+    default:    
+        cout<<"Yêu câu nhập lại\n";
+        break;
+    }
+    } while( chon<1 || chon >3);
+    int a=1;
+    int b=3;
+    int computer;
+	srand(time(0));
+	computer = rand()% (b-a+1)+a;
+    if(computer == 1)
+    cout<<"Máy chọn BÚA\n";
+    if(computer == 2)
+    cout<<"Máy chọn KÉO\n";
+    if(computer == 3)
+    cout<<"Máy chọn LÁ\n";
+    cout<<"Kết quả là: ";
+   if(tam==1)//player chọn búa
+   {
+        if(computer==1)
+        cout<<"HÒA";
+        else if(computer==2)
+        cout<<"WIN!";
+        else cout<<"LOSE!";
+    }
+    if(tam==2)//player chọn KÉO
+    {
+        if(computer==2)
+        cout<<"HÒA";
+        else if(computer==3)
+        cout<<"WIN!";
+        else cout<<"LOSE!";
+    }
+    if(tam==3)//player chọn LÁ
+    {
+        if(computer==3)
+        cout<<"HÒA";
+        else if(computer==1)
+        cout<<"WIN!";
+        else cout<<"LOSE!";
+    }
+    cout<<"\n";
+}
